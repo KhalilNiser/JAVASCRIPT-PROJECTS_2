@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XML EXAMPLE</title>
+</head>
+<body>
+    <p id="XML-example"></p>
+
+    <script>
+        var XML_Parser;
+        var XML_Docs;
+
+        // Creates a Text String
+        var movie = "<movie>" + 
+            "<title>The Breakfast Club</title>" + 
+            "<director>John Hughes</director>" + 
+            "<starring>Emilio Estevez,\nJudd Nelson,\nMolly Ringwald</starring>" + 
+            "<year>1985</year>" +
+            "</movie>";
+
+            // Creates an XML DOM parser
+            XML_PARSER = new DOMParser();
+
+            // Creates a new XML DOM object using the text String
+            XML_Docs = XML_Parser.parseFromString( Movie, "ext/xml" );
+
+            document.getElementById( "XML-example" ).innerHTML = 
+            XML_Docs.getElementsByTagName( "title" )[ 0 ].childNodes[ 0 ].nodeValue;
+    </script>
+</body>
+</html>
